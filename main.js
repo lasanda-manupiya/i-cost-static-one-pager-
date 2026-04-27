@@ -56,15 +56,3 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((el) => {
   observer.observe(el);
 });
-
-
-// Custom logo image fallback (if assets/logo.png is missing)
-document.querySelectorAll('[data-logo-image]').forEach((img) => {
-  img.addEventListener('error', () => {
-    img.style.display = 'none';
-    const fallback = img.nextElementSibling;
-    if (fallback) {
-      fallback.classList.add('show');
-    }
-  });
-});
