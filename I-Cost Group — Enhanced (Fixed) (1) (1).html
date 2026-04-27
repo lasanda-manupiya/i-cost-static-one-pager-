@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I-Cost Group — Intelligent Cost & Compliance for UK SMEs</title>
+<meta name="description" content="Three operating companies. One mission — helping UK project-based businesses and SMEs manage financial risk, regulatory complexity, and sustainability at speed and scale.">
+<meta property="og:title" content="I-Cost Group — Intelligent Cost & Compliance">
+<meta property="og:description" content="UK technology and advisory group delivering project cost intelligence, sustainability AI, and ESG advisory for SMEs.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Epilogue:wght@200;300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--black: #080b0f;
+--obsidian: #0e1319;
+--charcoal: #141c24;
+--slate: #1d2835;
+--steel: #263245;
+--fog: #8a9ab0;
+--mist: #c4cdd8;
+--white: #f0eeea;
+--gold: #c9a45a;
+--gold-pale: #e8d5a8;
+--gold-dim: rgba(201,164,90,0.15);
+--sage: #4a8f6f;
+--sage-bright: #67c99a;
+--sage-dim: rgba(74,143,111,0.12);
+--rule: rgba(255,255,255,0.07);
+--rule-bright: rgba(255,255,255,0.14);
+--blue-accent: #6da5d4;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+font-family: 'Epilogue', sans-serif;
+background: var(--black);
+color: var(--white);
+overflow-x: hidden;
+}
+@media (hover: hover) and (pointer: fine) {
+.cursor {
+position: fixed; z-index: 9999;
+width: 8px; height: 8px;
+background: var(--gold);
+border-radius: 50%;
+pointer-events: none;
+transform: translate(-50%, -50%);
+transition: transform 0.1s, width 0.3s, height 0.3s, background 0.3s;
+mix-blend-mode: difference;
+}
+.cursor-ring {
+position: fixed; z-index: 9998;
+width: 32px; height: 32px;
+border: 1px solid rgba(201,164,90,0.3);
+border-radius: 50%;
+pointer-events: none;
+transform: translate(-50%, -50%);
+transition: transform 0.18s ease, width 0.3s, height 0.3s;
+}
+body:has(a:hover) .cursor { background: var(--sage-bright); transform: translate(-50%,-50%) scale(1.5); }
+body:has(a:hover) .cursor-ring { width: 48px; height: 48px; border-color: rgba(103,201,154,0.3); }
+}
+@media (hover: none) {
+.cursor, .cursor-ring { display: none; }
+}
+body::before {
+content: '';
+position: fixed; inset: 0; z-index: 1000;
+background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+pointer-events: none; opacity: 0.4;
+}
+.skip-link {
+position: absolute; top: -40px; left: 0;
+background: var(--gold); color: var(--black);
+padding: 0.5rem 1rem; z-index: 10000;
+font-size: 0.8rem; text-decoration: none;
+transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.6rem 3.5rem;
+transition: background 0.4s, border-color 0.4s;
+border-bottom: 1px solid transparent;
+}
+nav.scrolled {
+background: rgba(8,11,15,0.92);
+backdrop-filter: blur(20px);
+border-color: var(--rule);
+}
+.nav-logo {
+display: flex; align-items: center; gap: 0.6rem;
+text-decoration: none; flex-shrink: 0;
+}
+.nav-logo svg { height: 28px; width: auto; }
+.nav-logo-text {
+font-family: 'Playfair Display', serif;
+font-size: 1.2rem; font-weight: 500;
+color: var(--white);
+letter-spacing: 0.02em;
+}
+.nav-logo-text sup {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.48rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(--gold); vertical-align: super; margin-left: 0.2rem;
+}
+.nav-center {
+position: absolute; left: 50%; transform: translateX(-50%);
+display: flex; gap: 2.5rem;
+}
+.nav-center a {
+font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+font-weight: 400; color: var(--fog); text-decoration: none;
+transition: color 0.2s;
+position: relative;
+}
+.nav-center a::after {
+content: ''; position: absolute; bottom: -4px; left: 0;
+width: 0; height: 1px; background: var(--gold);
+transition: width 0.3s ease;
+}
+.nav-center a:hover { color: var(--white); }
+.nav-center a:hover::after { width: 100%; }
+.nav-right { display: flex; align-items: center; gap: 1.5rem; }
+.nav-pill {
+font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+font-weight: 500; color: var(--black);
+background: var(--gold);
+padding: 0.55rem 1.4rem;
+text-decoration: none;
+transition: background 0.25s, transform 0.2s;
+clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+}
+.nav-pill:hover { background: var(--gold-pale); transform: translateY(-1px); }
+.hamburger {
+display: none; flex-direction: column; gap: 5px;
+background: none; border: none; cursor: pointer;
+padding: 4px; z-index: 700;
+position: relative;
+}
+.hamburger span {
+display: block; width: 24px; height: 2px;
+background: var(--white); transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px, 4px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+.mobile-menu {
+display: none; position: fixed; inset: 0; z-index: 550;
+background: rgba(8,11,15,0.97); backdrop-filter: blur(20px);
+flex-direction: column; align-items: center; justify-content: center;
+gap: 2.5rem; opacity: 0; pointer-events: none;
+transition: opacity 0.3s ease;
+padding-top: 5rem;
+}
+.mobile-menu.open { opacity: 1; pointer-events: all; }
+.mobile-menu a {
+font-family: 'Playfair Display', serif;
+font-size: 1.8rem; font-weight: 400; color: var(--white);
+text-decoration: none; transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--gold); }
+.hero {
+min-height: 100vh;
+display: flex; flex-direction: column; justify-content: flex-end;
+padding: 0 3.5rem 5rem;
+position: relative; overflow: hidden;
+}
+.hero-bg {
+position: absolute; inset: 0; z-index: 0;
+background:
+radial-gradient(ellipse 80% 60% at 60% 40%, rgba(74,143,111,0.06) 0%, transparent 60%),
+radial-gradient(ellipse 50% 40% at 80% 70%, rgba(201,164,90,0.04) 0%, transparent 50%);
+}
+.hero-grid {
+position: absolute; inset: 0; z-index: 0;
+background-image:
+linear-gradient(var(--rule) 1px, transparent 1px),
+linear-gradient(90deg, var(--rule) 1px, transparent 1px);
+background-size: 80px 80px;
+mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 30%, transparent 100%);
+}
+.hero-line {
+position: absolute; top: 0;
+width: 1px; height: 100%;
+background: linear-gradient(to bottom, transparent, var(--rule-bright) 30%, var(--rule-bright) 70%, transparent);
+z-index: 0;
+}
+.hero-line:nth-child(2) { right: 25%; }
+.hero-line:nth-child(3) { right: 50%; }
+.hero-line:nth-child(4) { right: 75%; opacity: 0.5; }
+.hero-tag {
+position: absolute; top: 7rem; right: 3.5rem; z-index: 2;
+display: flex; flex-direction: column; align-items: flex-end; gap: 0.6rem;
+}
+.hero-tag-item {
+display: flex; align-items: center; gap: 0.75rem;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+color: var(--fog);
+padding: 0.35rem 0.75rem;
+border: 1px solid var(--rule);
+background: rgba(8,11,15,0.5);
+backdrop-filter: blur(8px);
+transition: border-color 0.3s, color 0.3s;
+}
+.hero-tag-item:hover { border-color: var(--rule-bright); color: var(--mist); }
+.hero-tag-dot {
+width: 6px; height: 6px; border-radius: 50%;
+}
+.dot-gold { background: var(--gold); box-shadow: 0 0 8px var(--gold); }
+.dot-sage { background: var(--sage-bright); box-shadow: 0 0 8px var(--sage-bright); }
+.dot-blue { background: #6da5d4; box-shadow: 0 0 8px #6da5d4; }
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+.hero-eyebrow {
+display: flex; align-items: center; gap: 1rem;
+margin-bottom: 2.5rem;
+}
+.hero-eyebrow-line {
+width: 40px; height: 1px; background: var(--gold);
+}
+.hero-eyebrow-text {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(--gold);
+}
+.hero-h1 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(3.5rem, 7.5vw, 7.5rem);
+font-weight: 400; line-height: 0.95;
+letter-spacing: -0.02em;
+margin-bottom: 3rem;
+}
+.hero-h1 .line-1 { display: block; color: var(--white); }
+.hero-h1 .line-2 { display: block; color: transparent;
+-webkit-text-stroke: 1px rgba(255,255,255,0.2); }
+.hero-h1 .line-3 { display: block; color: var(--sage-bright);
+font-style: italic; }
+.hero-bottom {
+display: flex; align-items: flex-end;
+justify-content: space-between; gap: 2rem;
+}
+.hero-desc {
+max-width: 440px;
+font-size: 0.92rem; line-height: 1.8; font-weight: 300;
+color: var(--fog);
+}
+.hero-ctas { display: flex; gap: 1rem; align-items: center; flex-shrink: 0; }
+.btn-ghost {
+font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+font-weight: 400; color: var(--white);
+border: 1px solid var(--rule-bright);
+padding: 0.85rem 2rem; text-decoration: none;
+transition: all 0.25s; position: relative; overflow: hidden;
+}
+.btn-ghost::before {
+content: ''; position: absolute; inset: 0;
+background: var(--rule); transform: translateX(-100%);
+transition: transform 0.3s ease;
+}
+.btn-ghost:hover::before { transform: translateX(0); }
+.btn-ghost:hover { border-color: rgba(255,255,255,0.3); }
+.btn-solid {
+font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+font-weight: 500; color: var(--black);
+background: var(--gold);
+padding: 0.85rem 2rem; text-decoration: none;
+transition: all 0.25s; position: relative;
+}
+.btn-solid:hover { background: var(--gold-pale); transform: translateY(-2px); }
+.hero-scroll {
+position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%);
+display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+z-index: 2;
+}
+.scroll-label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+color: var(--fog); writing-mode: vertical-rl;
+animation: scrollPulse 2s ease-in-out infinite;
+}
+.scroll-bar {
+width: 1px; height: 60px;
+background: linear-gradient(to bottom, var(--fog), transparent);
+animation: scrollBar 2s ease-in-out infinite;
+}
+@keyframes scrollBar {
+0%, 100% { transform: scaleY(1); opacity: 0.4; }
+50% { transform: scaleY(0.5); opacity: 1; }
+}
+@keyframes scrollPulse {
+0%, 100% { opacity: 0.3; } 50% { opacity: 0.8; }
+}
+.marquee-wrap {
+border-top: 1px solid var(--rule);
+border-bottom: 1px solid var(--rule);
+padding: 0; overflow: hidden;
+background: var(--obsidian);
+}
+.marquee-track {
+display: flex; width: max-content;
+animation: marquee 40s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+.marquee-item {
+display: flex; align-items: center; gap: 1.2rem;
+padding: 1rem 2.5rem;
+border-right: 1px solid var(--rule);
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(--fog); white-space: nowrap;
+transition: color 0.2s;
+}
+.marquee-item:hover { color: var(--white); }
+.marquee-item .m-dot {
+width: 4px; height: 4px; border-radius: 50%; background: var(--gold);
+}
+@keyframes marquee {
+from { transform: translateX(0); }
+to { transform: translateX(-50%); }
+}
+.section-wrap {
+max-width: 1440px; margin: 0 auto; padding: 0 3.5rem;
+}
+.about {
+padding: 8rem 0;
+border-bottom: 1px solid var(--rule);
+}
+.about-inner {
+display: grid; grid-template-columns: 220px 1fr;
+gap: 6rem; align-items: start;
+}
+.about-label { padding-top: 0.5rem; }
+.section-label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+color: var(--gold); display: flex; align-items: center; gap: 0.75rem;
+}
+.section-label::before {
+content: ''; display: block;
+width: 20px; height: 1px; background: var(--gold);
+}
+.about-text h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2rem, 3.5vw, 3.2rem);
+font-weight: 400; line-height: 1.15;
+color: var(--white); margin-bottom: 1.8rem;
+letter-spacing: -0.01em;
+}
+.about-text h2 em { font-style: italic; color: var(--sage-bright); }
+.about-text p {
+font-size: 0.92rem; line-height: 1.85; font-weight: 300;
+color: var(--fog); max-width: 640px; margin-bottom: 3rem;
+}
+.about-stats {
+display: grid; grid-template-columns: repeat(4, 1fr);
+gap: 0; border: 1px solid var(--rule); max-width: 720px;
+}
+.stat {
+padding: 1.8rem 1.5rem;
+border-right: 1px solid var(--rule);
+}
+.stat:last-child { border-right: none; }
+.stat-n {
+font-family: 'Playfair Display', serif;
+font-size: 2.5rem; font-weight: 400; line-height: 1;
+color: var(--white); display: block; margin-bottom: 0.4rem;
+}
+.stat-n span { color: var(--gold); font-size: 1.6rem; }
+.stat-t {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase;
+color: var(--fog);
+}
+.companies { padding: 8rem 0; }
+.companies-header {
+display: flex; align-items: center; gap: 2rem;
+margin-bottom: 4rem;
+}
+.companies-header .section-label { flex-shrink: 0; }
+.companies-header .h-rule {
+flex: 1; height: 1px; background: var(--rule);
+}
+.companies-header .h-count {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.62rem; letter-spacing: 0.1em; color: var(--fog);
+}
+.company-row {
+display: grid; grid-template-columns: 80px 1fr 1fr 1fr;
+border-top: 1px solid var(--rule);
+transition: background 0.3s;
+position: relative;
+}
+.company-row::after {
+content: ''; position: absolute;
+top: -1px; left: 0; right: 0; height: 1px;
+background: transparent;
+transition: background 0.3s;
+}
+.company-row:hover::after { background: var(--gold); }
+.company-row:hover { background: rgba(255,255,255,0.015); }
+.company-row.last { border-bottom: 1px solid var(--rule); }
+.cr-num {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.6rem; letter-spacing: 0.1em;
+color: var(--fog); padding: 3rem 2rem;
+border-right: 1px solid var(--rule);
+display: flex; align-items: flex-start;
+}
+.cr-name {
+padding: 3rem 2.5rem;
+border-right: 1px solid var(--rule);
+}
+.cr-name h3 {
+font-family: 'Playfair Display', serif;
+font-size: 2rem; font-weight: 500;
+color: var(--white); margin-bottom: 0.3rem;
+letter-spacing: -0.01em;
+}
+.cr-type {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+}
+.type-gold { color: var(--gold); }
+.type-sage { color: var(--sage-bright); }
+.type-blue { color: #6da5d4; }
+.cr-desc {
+padding: 3rem 2.5rem;
+border-right: 1px solid var(--rule);
+font-size: 0.84rem; line-height: 1.75; font-weight: 300;
+color: var(--fog);
+}
+.cr-tags {
+padding: 3rem 2.5rem;
+display: flex; flex-direction: column;
+justify-content: space-between;
+}
+.tag-list {
+display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem;
+}
+.tag {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.08em;
+padding: 0.3rem 0.65rem;
+border: 1px solid var(--rule); color: var(--fog);
+transition: border-color 0.2s, color 0.2s;
+}
+.company-row:hover .tag { border-color: var(--rule-bright); color: var(--mist); }
+.cr-link {
+display: inline-flex; align-items: center; gap: 0.5rem;
+font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+font-weight: 400; color: var(--fog); text-decoration: none;
+transition: color 0.2s;
+}
+.cr-link .arr { transition: transform 0.2s; }
+.cr-link:hover { color: var(--white); }
+.cr-link:hover .arr { transform: translateX(4px); }
+.difference {
+background: var(--obsidian);
+border-top: 1px solid var(--rule);
+border-bottom: 1px solid var(--rule);
+padding: 8rem 0;
+}
+.diff-inner {
+display: grid; grid-template-columns: 1fr 1fr;
+gap: 8rem; align-items: start;
+}
+.diff-left h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2.5rem, 4vw, 4rem);
+font-weight: 400; line-height: 1.05;
+letter-spacing: -0.02em; color: var(--white);
+margin-bottom: 2rem; margin-top: 1.5rem;
+}
+.diff-left h2 em { font-style: italic; color: var(--sage-bright); }
+.diff-left p {
+font-size: 0.88rem; line-height: 1.85; font-weight: 300;
+color: var(--fog); margin-bottom: 3rem;
+}
+.diff-link {
+display: inline-flex; align-items: center; gap: 0.75rem;
+font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase;
+color: var(--gold); text-decoration: none;
+transition: gap 0.2s;
+}
+.diff-link:hover { gap: 1.2rem; }
+.diff-link .arr { font-size: 0.9rem; }
+.diff-table {
+border: 1px solid var(--rule);
+}
+.diff-head-row {
+display: grid; grid-template-columns: 1fr 1fr;
+border-bottom: 1px solid var(--rule);
+background: var(--charcoal);
+}
+.dhc {
+padding: 0.9rem 1.5rem;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase;
+}
+.dhc:first-child {
+color: var(--fog); border-right: 1px solid var(--rule);
+}
+.dhc:last-child { color: var(--sage-bright); }
+.diff-row {
+display: grid; grid-template-columns: 1fr 1fr;
+border-bottom: 1px solid var(--rule);
+transition: background 0.2s;
+}
+.diff-row:last-child { border-bottom: none; }
+.diff-row:hover { background: rgba(255,255,255,0.02); }
+.dc {
+padding: 1.2rem 1.5rem;
+font-size: 0.8rem; font-weight: 300; line-height: 1.5;
+}
+.dc:first-child {
+color: rgba(255,255,255,0.28);
+border-right: 1px solid var(--rule);
+text-decoration: line-through;
+text-decoration-color: rgba(255,255,255,0.1);
+}
+.dc:last-child {
+color: var(--mist);
+display: flex; align-items: center; gap: 0.5rem;
+}
+.dc:last-child::before {
+content: '✓'; color: var(--sage-bright);
+font-size: 0.7rem; flex-shrink: 0;
+}
+.sectors { padding: 8rem 0; border-bottom: 1px solid var(--rule); }
+.sectors-header {
+display: flex; justify-content: space-between; align-items: flex-end;
+margin-bottom: 5rem;
+}
+.sectors-header h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+font-weight: 400; letter-spacing: -0.02em;
+color: var(--white); margin-top: 1rem;
+}
+.sectors-header p {
+font-size: 0.82rem; color: var(--fog); font-weight: 300;
+max-width: 280px; text-align: right; line-height: 1.7;
+}
+.sector-grid {
+display: grid; grid-template-columns: repeat(4, 1fr);
+border: 1px solid var(--rule);
+}
+.sector-card {
+padding: 3rem 2rem;
+border-right: 1px solid var(--rule);
+position: relative; overflow: hidden;
+transition: background 0.4s;
+}
+.sector-card:last-child { border-right: none; }
+.sector-card:hover { background: var(--charcoal); }
+.sector-card::before {
+content: attr(data-num);
+position: absolute; bottom: -0.5rem; right: 1rem;
+font-family: 'Playfair Display', serif;
+font-size: 6rem; font-weight: 700; line-height: 1;
+color: rgba(255,255,255,0.025);
+pointer-events: none;
+}
+.sector-icon {
+width: 44px; height: 44px;
+border: 1px solid var(--rule);
+display: flex; align-items: center; justify-content: center;
+margin-bottom: 2rem;
+transition: border-color 0.3s, background 0.3s;
+color: var(--gold);
+}
+.sector-card:hover .sector-icon {
+border-color: var(--gold);
+background: var(--gold-dim);
+}
+.sector-card:nth-child(2) .sector-icon { color: var(--sage-bright); }
+.sector-card:nth-child(2):hover .sector-icon { border-color: var(--sage-bright); background: var(--sage-dim); }
+.sector-card:nth-child(3) .sector-icon { color: var(--blue-accent); }
+.sector-card:nth-child(3):hover .sector-icon { border-color: var(--blue-accent); background: rgba(109,165,212,0.12); }
+.sector-card:nth-child(4) .sector-icon { color: var(--mist); }
+.sector-card:nth-child(4):hover .sector-icon { border-color: var(--mist); background: rgba(196,205,216,0.08); }
+.sector-card h3 {
+font-family: 'Playfair Display', serif;
+font-size: 1.3rem; font-weight: 500;
+color: var(--white); margin-bottom: 0.8rem;
+letter-spacing: -0.01em;
+}
+.sector-card p {
+font-size: 0.78rem; line-height: 1.75; font-weight: 300;
+color: var(--fog);
+}
+.trust-bar {
+padding: 4rem 0;
+border-bottom: 1px solid var(--rule);
+background: var(--obsidian);
+}
+.trust-inner {
+display: flex; align-items: center; gap: 3rem;
+justify-content: center; flex-wrap: wrap;
+}
+.trust-label {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+color: var(--fog); white-space: nowrap;
+}
+.trust-logos {
+display: flex; align-items: center; gap: 3.5rem; flex-wrap: wrap; justify-content: center;
+}
+.trust-item {
+font-family: 'Epilogue', sans-serif;
+font-size: 0.9rem; font-weight: 300;
+color: rgba(255,255,255,0.25);
+letter-spacing: 0.05em;
+white-space: nowrap;
+transition: color 0.3s;
+}
+.trust-item:hover { color: rgba(255,255,255,0.5); }
+.trust-item strong { font-weight: 500; }
+.cta-band {
+padding: 7rem 0;
+background: var(--charcoal);
+border-bottom: 1px solid var(--rule);
+text-align: center;
+position: relative; overflow: hidden;
+}
+.cta-band::before {
+content: '';
+position: absolute; inset: 0;
+background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(74,143,111,0.06), transparent);
+}
+.cta-band h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2.5rem, 5vw, 5rem);
+font-weight: 400; line-height: 1.05;
+color: var(--white); margin-bottom: 1.5rem;
+position: relative; letter-spacing: -0.02em;
+}
+.cta-band h2 em { font-style: italic; color: var(--sage-bright); }
+.cta-band > .section-wrap > p {
+font-size: 0.9rem; font-weight: 300; color: var(--fog);
+max-width: 520px; margin: 0 auto 3rem; line-height: 1.8;
+position: relative;
+}
+.cta-group { display: flex; justify-content: center; gap: 1rem; position: relative; flex-wrap: wrap; }
+footer {
+background: var(--obsidian);
+padding: 5rem 3.5rem 3rem;
+border-top: 1px solid var(--rule);
+}
+.footer-top {
+max-width: 1440px; margin: 0 auto;
+display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr;
+gap: 5rem; padding-bottom: 4rem;
+border-bottom: 1px solid var(--rule);
+}
+.footer-brand .f-logo {
+display: flex; align-items: center; gap: 0.5rem;
+margin-bottom: 1rem; text-decoration: none;
+}
+.footer-brand .f-logo svg { height: 24px; width: auto; }
+.f-logo-text {
+font-family: 'Playfair Display', serif;
+font-size: 1.2rem; font-weight: 500; color: var(--white);
+}
+.f-logo-text sup {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.42rem; letter-spacing: 0.15em; text-transform: uppercase;
+color: var(--gold); vertical-align: super; margin-left: 0.2rem;
+}
+.footer-brand p {
+font-size: 0.8rem; line-height: 1.75; font-weight: 300;
+color: var(--fog); max-width: 280px; margin-bottom: 2rem;
+}
+.f-badge {
+display: inline-flex; align-items: center; gap: 0.5rem;
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+color: var(--sage-bright);
+border: 1px solid rgba(103,201,154,0.2);
+padding: 0.4rem 0.8rem;
+}
+.f-badge::before { content: '●'; font-size: 0.4rem; }
+.footer-col h4 {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+color: var(--gold); margin-bottom: 1.5rem;
+}
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 0.65rem; }
+.footer-col a {
+font-size: 0.8rem; font-weight: 300; color: var(--fog);
+text-decoration: none; transition: color 0.2s;
+}
+.footer-col a:hover { color: var(--white); }
+.footer-bottom {
+max-width: 1440px; margin: 2.5rem auto 0;
+display: flex; justify-content: space-between; align-items: center;
+flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.1em;
+color: rgba(255,255,255,0.2);
+}
+.footer-bottom a {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem; letter-spacing: 0.1em;
+color: rgba(255,255,255,0.2);
+text-decoration: none;
+transition: color 0.2s;
+}
+.footer-bottom a:hover { color: rgba(255,255,255,0.4); }
+.reveal {
+opacity: 0; transform: translateY(30px);
+transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
+.hero-h1 .line-1 { animation: fadeUp 0.8s ease 0.35s both; }
+.hero-h1 .line-2 { animation: fadeUp 0.8s ease 0.5s both; }
+.hero-h1 .line-3 { animation: fadeUp 0.8s ease 0.65s both; }
+.hero-desc { animation: fadeUp 0.8s ease 0.8s both; }
+.hero-ctas { animation: fadeUp 0.8s ease 0.9s both; }
+.hero-tag { animation: fadeUp 0.8s ease 1s both; }
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 1200px) {
+.company-row { grid-template-columns: 60px 1fr 1fr; }
+.cr-tags { display: none; }
+.about-stats { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 900px) {
+nav { padding: 1.2rem 2rem; }
+.nav-center { display: none; }
+.nav-pill { display: none; }
+.hamburger { display: flex; }
+.mobile-menu { display: flex; }
+.hero { padding: 0 2rem 4rem; }
+.hero-tag { display: none; }
+.section-wrap { padding: 0 2rem; }
+.about-inner { grid-template-columns: 1fr; gap: 2rem; }
+.about-stats { grid-template-columns: repeat(2, 1fr); }
+.about-stats .stat:nth-child(2) { border-right: none; }
+.company-row { grid-template-columns: 1fr; }
+.cr-num { display: none; }
+.cr-name, .cr-desc, .cr-tags { border-right: none; border-bottom: 1px solid var(--rule); }
+.cr-tags { display: flex; }
+.diff-inner { grid-template-columns: 1fr; gap: 4rem; }
+.sector-grid { grid-template-columns: 1fr 1fr; }
+.sector-card { border-bottom: 1px solid var(--rule); }
+.sectors-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+.sectors-header p { text-align: left; }
+.footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+footer { padding: 4rem 2rem 3rem; }
+.hero-bottom { flex-direction: column; align-items: flex-start; }
+.trust-logos { gap: 2rem; }
+}
+@media (max-width: 600px) {
+.about-stats { grid-template-columns: 1fr 1fr; }
+.sector-grid { grid-template-columns: 1fr; }
+.sector-card { border-right: none; }
+.footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
+.cta-group { flex-direction: column; align-items: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: 0.01ms !important;
+animation-iteration-count: 1 !important;
+transition-duration: 0.01ms !important;
+}
+.marquee-track { animation: none; }
+.reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav id="nav">
+<a href="#" class="nav-logo">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="12" cy="12" r="1"/>
+<circle cx="12" cy="5" r="1"/>
+<circle cx="12" cy="19" r="1"/>
+<circle cx="5" cy="12" r="1"/>
+<circle cx="19" cy="12" r="1"/>
+</svg>
+<span class="nav-logo-text">I-Cost<sup>GROUP</sup></span>
+</a>
+<div class="nav-center">
+<a href="#about">About</a>
+<a href="#companies">Companies</a>
+<a href="#sectors">Sectors</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="nav-right">
+<a href="https://www.linkedin.com/company/i-cost-group" class="nav-pill">LinkedIn</a>
+</div>
+<button class="hamburger" id="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="#about">About</a>
+<a href="#companies">Companies</a>
+<a href="#sectors">Sectors</a>
+<a href="#contact">Contact</a>
+<a href="https://www.linkedin.com/company/i-cost-group">LinkedIn</a>
+</div>
+
+<main id="main">
+<section class="hero">
+<div class="hero-bg"></div>
+<div class="hero-grid"></div>
+<div class="hero-line"></div>
+<div class="hero-line"></div>
+<div class="hero-line"></div>
+<div class="hero-line"></div>
+
+<div class="hero-tag">
+<div class="hero-tag-item">
+<div class="hero-tag-dot dot-gold"></div>
+<span>AI-Powered</span>
+</div>
+<div class="hero-tag-item">
+<div class="hero-tag-dot dot-sage"></div>
+<span>Real-time Data</span>
+</div>
+<div class="hero-tag-item">
+<div class="hero-tag-dot dot-blue"></div>
+<span>Risk Management</span>
+</div>
+</div>
+
+<div class="hero-content">
+<div class="hero-eyebrow">
+<div class="hero-eyebrow-line"></div>
+<span class="hero-eyebrow-text">UK Technology Group</span>
+</div>
+<h1 class="hero-h1">
+<span class="line-1">Intelligent Cost</span>
+<span class="line-2">Intelligence</span>
+<span class="line-3">& Compliance</span>
+</h1>
+<div class="hero-bottom">
+<p class="hero-desc">Helping UK SMEs and project-based businesses manage financial risk, regulatory complexity, and sustainability challenges through AI-powered intelligence and real-time advisory.</p>
+<div class="hero-ctas">
+<a href="#companies" class="btn-ghost">Discover</a>
+<a href="#contact" class="btn-solid">Get Started</a>
+</div>
+</div>
+</div>
+
+<div class="hero-scroll">
+<span class="scroll-label">Scroll</span>
+<div class="scroll-bar"></div>
+</div>
+</section>
+
+<section class="marquee-wrap">
+<div class="marquee-track">
+<div class="marquee-item"><span class="m-dot"></span> Cost Intelligence</div>
+<div class="marquee-item"><span class="m-dot"></span> Sustainability AI</div>
+<div class="marquee-item"><span class="m-dot"></span> ESG Advisory</div>
+<div class="marquee-item"><span class="m-dot"></span> Compliance Automation</div>
+<div class="marquee-item"><span class="m-dot"></span> Risk Management</div>
+<div class="marquee-item"><span class="m-dot"></span> Cost Intelligence</div>
+<div class="marquee-item"><span class="m-dot"></span> Sustainability AI</div>
+<div class="marquee-item"><span class="m-dot"></span> ESG Advisory</div>
+</div>
+</section>
+
+<section id="about" class="about">
+<div class="section-wrap">
+<div class="about-inner">
+<div class="about-label">
+<span class="section-label">About</span>
+</div>
+<div class="about-text reveal reveal-delay-1">
+<h2>Three companies. <em>One mission.</em></h2>
+<p>We're a UK technology and advisory group built to help project-based businesses and SMEs navigate complex financial, regulatory, and sustainability landscapes. Each of our operating companies brings specialized expertise in cost intelligence, sustainability AI, and ESG advisory—working together to deliver integrated solutions that drive real business impact.</p>
+
+<div class="about-stats reveal reveal-delay-2">
+<div class="stat">
+<span class="stat-n">3 <span>cos</span></span>
+<span class="stat-t">Operating Companies</span>
+</div>
+<div class="stat">
+<span class="stat-n">500<span>+</span></span>
+<span class="stat-t">Active Projects</span>
+</div>
+<div class="stat">
+<span class="stat-n">12 <span>yrs</span></span>
+<span class="stat-t">Combined Experience</span>
+</div>
+<div class="stat">
+<span class="stat-n">90<span>%</span></span>
+<span class="stat-t">Client Retention</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="companies" class="companies">
+<div class="section-wrap">
+<div class="companies-header">
+<span class="section-label">Discover</span>
+<div class="h-rule"></div>
+<span class="h-count">3 Companies</span>
+</div>
+
+<div class="company-row reveal reveal-delay-1">
+<div class="cr-num">01</div>
+<div class="cr-name">
+<h3>ProjectCostIQ</h3>
+<span class="cr-type type-gold">Cost Intelligence</span>
+</div>
+<div class="cr-desc">Real-time project cost tracking and forecasting powered by machine learning. Helps construction, engineering, and infrastructure teams identify cost overruns before they happen.</div>
+<div class="cr-tags">
+<div class="tag-list">
+<span class="tag">Project Finance</span>
+<span class="tag">Earned Value</span>
+<span class="tag">Risk Analytics</span>
+</div>
+<a href="https://projectcostiq.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+</div>
+</div>
+
+<div class="company-row reveal reveal-delay-2">
+<div class="cr-num">02</div>
+<div class="cr-name">
+<h3>SustainGate</h3>
+<span class="cr-type type-sage">Sustainability AI</span>
+</div>
+<div class="cr-desc">AI-powered ESG and sustainability intelligence for compliance and reporting. Automates carbon accounting, supply chain ESG assessment, and regulatory reporting across frameworks.</div>
+<div class="cr-tags">
+<div class="tag-list">
+<span class="tag">Carbon Tracking</span>
+<span class="tag">ESG Reporting</span>
+<span class="tag">Supply Chain</span>
+</div>
+<a href="https://sustaingate.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+</div>
+</div>
+
+<div class="company-row last reveal reveal-delay-3">
+<div class="cr-num">03</div>
+<div class="cr-name">
+<h3>SustainZone</h3>
+<span class="cr-type type-blue">ESG Advisory</span>
+</div>
+<div class="cr-desc">Full-service ESG advisory and strategy for mid-market businesses. From governance frameworks to stakeholder engagement, we help build sustainable, compliant organizations.</div>
+<div class="cr-tags">
+<div class="tag-list">
+<span class="tag">ESG Strategy</span>
+<span class="tag">Governance</span>
+<span class="tag">Compliance</span>
+</div>
+<a href="https://sustainzone.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="difference">
+<div class="section-wrap">
+<div class="diff-inner">
+<div class="diff-left reveal reveal-delay-1">
+<h2>Why choose <em>I-Cost Group?</em></h2>
+<p>We combine proven advisory expertise with cutting-edge AI and automation technology. Our integrated approach means you're not juggling separate vendors—you're getting aligned, coordinated solutions that actually talk to each other.</p>
+<a href="#contact" class="diff-link">Talk to our team <span class="arr">→</span></a>
+</div>
+
+<div class="diff-table reveal reveal-delay-2">
+<div class="diff-head-row">
+<div class="dhc">Without I-Cost Group</div>
+<div class="dhc">With I-Cost Group</div>
+</div>
+<div class="diff-row">
+<div class="dc">Fragmented tools, multiple platforms</div>
+<div class="dc">Unified intelligence across finance, ESG, and risk</div>
+</div>
+<div class="diff-row">
+<div class="dc">Manual cost tracking & reporting</div>
+<div class="dc">Real-time AI-powered insights & forecasting</div>
+</div>
+<div class="diff-row">
+<div class="dc">Compliance gaps & regulatory exposure</div>
+<div class="dc">Automated compliance & audit readiness</div>
+</div>
+<div class="diff-row">
+<div class="dc">Siloed advisory relationships</div>
+<div class="dc">Integrated strategy & execution support</div>
+</div>
+<div class="diff-row">
+<div class="dc">Reactive risk management</div>
+<div class="dc">Predictive risk analytics & mitigation</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="sectors" class="sectors">
+<div class="section-wrap">
+<div class="sectors-header">
+<h2>Industries we serve</h2>
+<p>Specialized expertise across the sectors where regulatory and financial complexity matters most.</p>
+</div>
+
+<div class="sector-grid">
+<div class="sector-card reveal reveal-delay-1" data-num="01">
+<div class="sector-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M3 12h18M3 6h18M3 18h18M5 3v18M7 3v18M9 3v18M15 3v18M17 3v18M19 3v18"/>
+</svg>
+</div>
+<h3>Construction</h3>
+<p>Large-scale project cost intelligence, supply chain compliance, and sustainability reporting for contractors and developers.</p>
+</div>
+
+<div class="sector-card reveal reveal-delay-2" data-num="02">
+<div class="sector-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="12" cy="12" r="1"/>
+<path d="M8 12a4 4 0 1 0 8 0"/>
+<path d="M12 2v4M12 16v4M5.64 5.64l2.83 2.83M15.53 15.53l2.83 2.83M2 12h4M16 12h4"/>
+</svg>
+</div>
+<h3>Manufacturing</h3>
+<p>Production cost tracking, process efficiency, supply chain ESG, and regulatory compliance for industrial operations.</p>
+</div>
+
+<div class="sector-card reveal reveal-delay-3" data-num="03">
+<div class="sector-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M12 2v20M6 8h12M6 16h12M3 10h18M3 14h18"/>
+</svg>
+</div>
+<h3>Healthcare Supply</h3>
+<p>Cost management, compliance automation, and ESG strategy for healthcare organizations and medical device supply chains.</p>
+</div>
+
+<div class="sector-card reveal reveal-delay-4" data-num="04">
+<div class="sector-icon">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+<path d="M2 7h20M2 7c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2M2 7v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7M6 11h12M6 15h12"/>
+</svg>
+</div>
+<h3>Infrastructure</h3>
+<p>Major infrastructure project cost management, sustainability compliance, and integrated ESG advisory for large public and private schemes.</p>
+</div>
+</div>
+</section>
+
+<div class="trust-bar">
+<div class="trust-inner">
+<span class="trust-label">Trusted by</span>
+<div class="trust-logos">
+<div class="trust-item">Innovate UK</div>
+<div class="trust-item">Catapult <strong>Groups</strong></div>
+<div class="trust-item">BIS / BEIS</div>
+<div class="trust-item">HLF</div>
+</div>
+</div>
+</div>
+
+<section id="contact" class="cta-band">
+<div class="section-wrap">
+<h2>Ready to transform your <em>financial intelligence?</em></h2>
+<p>Let's talk about how our integrated suite of AI-powered solutions can help your business manage cost, compliance, and sustainability.</p>
+<div class="cta-group">
+<a href="mailto:hello@icostgroup.co.uk" class="btn-solid">Email us</a>
+<a href="https://www.linkedin.com/company/i-cost-group" class="btn-ghost">Connect on LinkedIn</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-top">
+<div class="footer-brand">
+<a href="#" class="f-logo">
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+<circle cx="12" cy="12" r="1"/>
+<circle cx="12" cy="5" r="1"/>
+<circle cx="12" cy="19" r="1"/>
+<circle cx="5" cy="12" r="1"/>
+<circle cx="19" cy="12" r="1"/>
+</svg>
+<span class="f-logo-text">I-Cost<sup>GROUP</sup></span>
+</a>
+<p>UK technology and advisory group delivering project cost intelligence, sustainability AI, and ESG advisory for SMEs and mid-market businesses.</p>
+<div class="f-badge">Registered in England & Wales — Company No. 09789057</div>
+</div>
+
+<div class="footer-col">
+<h4>Companies</h4>
+<ul>
+<li><a href="https://projectcostiq.co.uk">ProjectCostIQ</a></li>
+<li><a href="https://sustaingate.co.uk">SustainGate</a></li>
+<li><a href="https://sustainzone.co.uk">SustainZone</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Sectors</h4>
+<ul>
+<li><a href="#sectors">Construction</a></li>
+<li><a href="#sectors">Manufacturing</a></li>
+<li><a href="#sectors">Healthcare Supply</a></li>
+<li><a href="#sectors">Infrastructure</a></li>
+</ul>
+</div>
+
+<div class="footer-col">
+<h4>Connect</h4>
+<ul>
+<li><a href="mailto:hello@icostgroup.co.uk">hello@icostgroup.co.uk</a></li>
+<li><a href="https://www.linkedin.com/company/i-cost-group">LinkedIn</a></li>
+<li><a href="#contact">Get Started</a></li>
+</ul>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p>&copy; 2026 I-Cost Group Ltd</p>
+<div>
+<a href="privacy-policy.html">Privacy Policy</a>
+<span style="color: rgba(255,255,255,0.2);"> • </span>
+<a href="https://find-and-update.company-information.service.gov.uk/company/09789057">Companies House</a>
+</div>
+</div>
+</footer>
+
+<script>
+// Custom cursor
+const cursor = document.querySelector('.cursor');
+const cursorRing = document.querySelector('.cursor-ring');
+
+document.addEventListener('mousemove', (e) => {
+  if (cursor && cursorRing) {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
+  }
+});
+
+// Nav scroll state
+const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+
+// Mobile menu toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  mobileMenu.classList.toggle('open');
+});
+
+// Close mobile menu when link clicked
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// Scroll reveal
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
