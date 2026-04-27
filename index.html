@@ -454,6 +454,11 @@ font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
 font-weight: 400; color: var(--fog); text-decoration: none;
 transition: color 0.2s;
 }
+.cr-link.is-disabled {
+opacity: 0.7;
+cursor: default;
+pointer-events: none;
+}
 .cr-link .arr { transition: transform 0.2s; }
 .cr-link:hover { color: var(--white); }
 .cr-link:hover .arr { transform: translateX(4px); }
@@ -938,7 +943,7 @@ transition-duration: 0.01ms !important;
 <span class="tag">Earned Value</span>
 <span class="tag">Risk Analytics</span>
 </div>
-<a href="https://projectcostiq.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+<a href="https://i-cost.co.uk/" class="cr-link">Explore <span class="arr">→</span></a>
 </div>
 </div>
 
@@ -955,7 +960,7 @@ transition-duration: 0.01ms !important;
 <span class="tag">ESG Reporting</span>
 <span class="tag">Supply Chain</span>
 </div>
-<a href="https://sustaingate.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+<span class="cr-link is-disabled" aria-disabled="true">Explore <span class="arr">→</span> <span>(Coming soon)</span></span>
 </div>
 </div>
 
@@ -972,7 +977,7 @@ transition-duration: 0.01ms !important;
 <span class="tag">Governance</span>
 <span class="tag">Compliance</span>
 </div>
-<a href="https://sustainzone.co.uk" class="cr-link">Explore <span class="arr">→</span></a>
+<a href="https://sustainzone.earth/" class="cr-link">Explore <span class="arr">→</span></a>
 </div>
 </div>
 </div>
@@ -1112,9 +1117,9 @@ transition-duration: 0.01ms !important;
 <div class="footer-col">
 <h4>Companies</h4>
 <ul>
-<li><a href="https://projectcostiq.co.uk">ProjectCostIQ</a></li>
-<li><a href="https://sustaingate.co.uk">SustainGate</a></li>
-<li><a href="https://sustainzone.co.uk">SustainZone</a></li>
+<li><a href="https://i-cost.co.uk/">ProjectCostIQ</a></li>
+<li><span>SustainGate (Coming soon)</span></li>
+<li><a href="https://sustainzone.earth/">SustainZone</a></li>
 </ul>
 </div>
 
