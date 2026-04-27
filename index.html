@@ -597,6 +597,89 @@ letter-spacing: -0.01em;
 font-size: 0.78rem; line-height: 1.75; font-weight: 300;
 color: var(--fog);
 }
+
+.blogs {
+padding: 8rem 0;
+border-bottom: 1px solid var(--rule);
+background: linear-gradient(180deg, rgba(14,19,25,0.7) 0%, rgba(8,11,15,1) 100%);
+}
+.blogs-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+gap: 2rem;
+margin-bottom: 3rem;
+}
+.blogs-header h2 {
+font-family: 'Playfair Display', serif;
+font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+font-weight: 400;
+letter-spacing: -0.02em;
+color: var(--white);
+margin-top: 1rem;
+}
+.blogs-header p {
+max-width: 380px;
+text-align: right;
+font-size: 0.84rem;
+line-height: 1.75;
+font-weight: 300;
+color: var(--fog);
+}
+.blog-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+}
+.blog-card {
+min-height: 170px;
+padding: 1.5rem;
+border: 1px solid var(--rule);
+background: rgba(20,28,36,0.45);
+backdrop-filter: blur(2px);
+text-decoration: none;
+position: relative;
+overflow: hidden;
+transition: border-color 0.25s, transform 0.25s, background 0.25s;
+}
+.blog-card::before {
+content: attr(data-index);
+position: absolute;
+right: 1rem;
+bottom: 0.6rem;
+font-family: 'Playfair Display', serif;
+font-size: 2.5rem;
+line-height: 1;
+color: rgba(255,255,255,0.05);
+}
+.blog-card:hover {
+border-color: var(--gold);
+transform: translateY(-4px);
+background: rgba(29,40,53,0.45);
+}
+.blog-card h3 {
+font-family: 'Playfair Display', serif;
+font-size: 1.2rem;
+font-weight: 500;
+color: var(--white);
+margin-bottom: 0.85rem;
+}
+.blog-meta {
+font-family: 'IBM Plex Mono', monospace;
+font-size: 0.58rem;
+letter-spacing: 0.14em;
+text-transform: uppercase;
+color: var(--sage-bright);
+margin-bottom: 0.9rem;
+}
+.blog-card p {
+font-size: 0.78rem;
+line-height: 1.65;
+font-weight: 300;
+color: var(--fog);
+max-width: 24ch;
+}
+
 .trust-bar {
 padding: 4rem 0;
 border-bottom: 1px solid var(--rule);
@@ -764,6 +847,9 @@ nav { padding: 1.2rem 2rem; }
 .sector-card { border-bottom: 1px solid var(--rule); }
 .sectors-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
 .sectors-header p { text-align: left; }
+.blog-grid { grid-template-columns: 1fr 1fr; }
+.blogs-header { flex-direction: column; align-items: flex-start; }
+.blogs-header p { text-align: left; }
 .footer-top { grid-template-columns: 1fr 1fr; gap: 3rem; }
 footer { padding: 4rem 2rem 3rem; }
 .hero-bottom { flex-direction: column; align-items: flex-start; }
@@ -772,6 +858,7 @@ footer { padding: 4rem 2rem 3rem; }
 @media (max-width: 600px) {
 .about-stats { grid-template-columns: 1fr 1fr; }
 .sector-grid { grid-template-columns: 1fr; }
+.blog-grid { grid-template-columns: 1fr; }
 .sector-card { border-right: none; }
 .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
 .cta-group { flex-direction: column; align-items: center; }
@@ -807,6 +894,7 @@ transition-duration: 0.01ms !important;
 <a href="#about">About</a>
 <a href="#companies">Companies</a>
 <a href="#sectors">Sectors</a>
+<a href="#blogs">Blogs</a>
 <a href="#contact">Contact</a>
 </div>
 <div class="nav-right">
@@ -823,6 +911,7 @@ transition-duration: 0.01ms !important;
 <a href="#about">About</a>
 <a href="#companies">Companies</a>
 <a href="#sectors">Sectors</a>
+<a href="#blogs">Blogs</a>
 <a href="#contact">Contact</a>
 <a href="https://www.linkedin.com/company/i-cost-group">LinkedIn</a>
 </div>
@@ -1073,6 +1162,20 @@ transition-duration: 0.01ms !important;
 </div>
 </section>
 
+
+<section id="blogs" class="blogs">
+<div class="section-wrap">
+<div class="blogs-header reveal reveal-delay-1">
+<div>
+<span class="section-label">Insights</span>
+<h2>Blogs & updates</h2>
+</div>
+<p>We’ll publish thought leadership, product updates, and industry explainers here. For now, these slots are reserved and marked as coming soon.</p>
+</div>
+<div id="blogGrid" class="blog-grid" aria-label="Blog listing"></div>
+</div>
+</section>
+
 <div class="trust-bar">
 <div class="trust-inner">
 <span class="trust-label">Trusted by</span>
@@ -1153,65 +1256,8 @@ transition-duration: 0.01ms !important;
 </div>
 </footer>
 
-<script>
-// Custom cursor
-const cursor = document.querySelector('.cursor');
-const cursorRing = document.querySelector('.cursor-ring');
+<script src="blogs.js"></script>
+<script src="main.js"></script>
 
-document.addEventListener('mousemove', (e) => {
-  if (cursor && cursorRing) {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-  }
-});
-
-// Nav scroll state
-const nav = document.querySelector('nav');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    nav.classList.add('scrolled');
-  } else {
-    nav.classList.remove('scrolled');
-  }
-});
-
-// Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  mobileMenu.classList.toggle('open');
-});
-
-// Close mobile menu when link clicked
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('open');
-  });
-});
-
-// Scroll reveal
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.reveal').forEach(el => {
-  observer.observe(el);
-});
-</script>
 </body>
 </html>
