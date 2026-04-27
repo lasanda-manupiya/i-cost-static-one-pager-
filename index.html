@@ -94,7 +94,13 @@ border-color: var(--rule);
 display: flex; align-items: center; gap: 0.6rem;
 text-decoration: none; flex-shrink: 0;
 }
-.nav-logo svg { height: 28px; width: auto; }
+.logo-mark-img {
+height: 28px; width: 28px; object-fit: contain;
+display: block;
+}
+.logo-mark-fallback { display: none; }
+.logo-mark-fallback.show { display: block; }
+.logo-mark-fallback svg { height: 28px; width: auto; }
 .nav-logo-text {
 font-family: 'Playfair Display', serif;
 font-size: 1.2rem; font-weight: 500;
@@ -748,7 +754,8 @@ border-bottom: 1px solid var(--rule);
 display: flex; align-items: center; gap: 0.5rem;
 margin-bottom: 1rem; text-decoration: none;
 }
-.footer-brand .f-logo svg { height: 24px; width: auto; }
+.footer-brand .logo-mark-img { height: 24px; width: 24px; }
+.footer-brand .logo-mark-fallback svg { height: 24px; width: auto; }
 .f-logo-text {
 font-family: 'Playfair Display', serif;
 font-size: 1.2rem; font-weight: 500; color: var(--white);
@@ -881,6 +888,8 @@ transition-duration: 0.01ms !important;
 
 <nav id="nav">
 <a href="#" class="nav-logo">
+<img src="assets/logo.png" alt="I-Cost Group logo" class="logo-mark-img" data-logo-image>
+<span class="logo-mark-fallback" aria-hidden="true">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
 <circle cx="12" cy="12" r="1"/>
 <circle cx="12" cy="5" r="1"/>
@@ -888,6 +897,7 @@ transition-duration: 0.01ms !important;
 <circle cx="5" cy="12" r="1"/>
 <circle cx="19" cy="12" r="1"/>
 </svg>
+</span>
 <span class="nav-logo-text">I-Cost<sup>GROUP</sup></span>
 </a>
 <div class="nav-center">
@@ -1204,6 +1214,8 @@ transition-duration: 0.01ms !important;
 <div class="footer-top">
 <div class="footer-brand">
 <a href="#" class="f-logo">
+<img src="assets/logo.png" alt="I-Cost Group logo" class="logo-mark-img" data-logo-image>
+<span class="logo-mark-fallback" aria-hidden="true">
 <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
 <circle cx="12" cy="12" r="1"/>
 <circle cx="12" cy="5" r="1"/>
@@ -1211,6 +1223,7 @@ transition-duration: 0.01ms !important;
 <circle cx="5" cy="12" r="1"/>
 <circle cx="19" cy="12" r="1"/>
 </svg>
+</span>
 <span class="f-logo-text">I-Cost<sup>GROUP</sup></span>
 </a>
 <p>UK technology and advisory group delivering project cost intelligence, sustainability AI, and ESG advisory for SMEs and mid-market businesses.</p>
