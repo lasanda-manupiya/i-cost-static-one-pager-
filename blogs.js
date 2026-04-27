@@ -4,7 +4,7 @@ if (blogGrid) {
   const blogCards = Array.from({ length: 8 }, (_, index) => ({
     title: `Blog ${String(index + 1).padStart(2, '0')}`,
     status: 'Coming soon',
-    summary: 'Placeholder card reserved for future blog links and publishing updates.'
+    summary: 'Publishing updates.'
   }));
 
   blogCards.forEach((blog, index) => {
