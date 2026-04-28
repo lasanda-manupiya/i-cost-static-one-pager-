@@ -37,8 +37,15 @@ if (blogGrid) {
       url:'http://blog.i-cost.co.uk/2026/04/28/the-full-cost-of-business-for-uk-smes-in-2026/',
       backgroundImage: 'https://images.pexels.com/photos/8970682/pexels-photo-8970682.jpeg'
     },
-    ...Array.from({ length: 3 }, (_, index) => ({
-      title: `Blog ${String(index + 6).padStart(2, '0')}`,
+    {
+      title: 'Compliance Roadmap for UK Project-Based SMEs (2026)',
+      status: 'Published November 2025',
+      summary: 'Follow a clear compliance roadmap to help UK project-based SMEs stay audit-ready and operationally resilient in 2026.',
+      url: 'https://blog.i-cost.co.uk/2026/04/28/compliance-roadmap-for-uk-project-based-smes-2026/',
+      backgroundImage: 'https://images.pexels.com/photos/6675078/pexels-photo-6675078.jpeg'
+    },
+    ...Array.from({ length: 2 }, (_, index) => ({
+      title: `Blog ${String(index + 7).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
