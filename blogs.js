@@ -30,8 +30,15 @@ if (blogGrid) {
       url: 'http://blog.i-cost.co.uk/2026/04/28/five-hidden-margin-leaks-on-uk-construction-projects/',
       backgroundImage: 'https://images.pexels.com/photos/9755376/pexels-photo-9755376.jpeg'
     },
-    ...Array.from({ length: 4 }, (_, index) => ({
-      title: `Blog ${String(index + 5).padStart(2, '0')}`,
+    {
+      title: 'The Full Cost of Business for UK SMEs in 2026',
+      status: 'Published December 2025',
+      summary: 'Understand the full cost pressures UK SMEs faced going into 2026 and where margins were most exposed.',
+      url: 'https://blog.i-cost.co.uk/2026/04/28/the-full-cost-of-business-for-uk-smes-in-2026/',
+      backgroundImage: 'https://images.pexels.com/photos/8970682/pexels-photo-8970682.jpeg'
+    },
+    ...Array.from({ length: 3 }, (_, index) => ({
+      title: `Blog ${String(index + 6).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
