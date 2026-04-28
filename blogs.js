@@ -9,8 +9,15 @@ if (blogGrid) {
       url: 'http://blog.i-cost.co.uk/2026/04/27/extended-producer-responsibility-eprfor-packaging-in-the-uk/',
       featured: true
     },
-    ...Array.from({ length: 7 }, (_, index) => ({
-      title: `Blog ${String(index + 2).padStart(2, '0')}`,
+    {
+      title: 'PPN 006 Explained: Carbon Plans for UK Contractors',
+      status: 'Published March 2026',
+      summary: 'Understand what PPN 006 means in practice and how UK contractors can build compliant carbon reduction plans.',
+      url: 'http://blog.i-cost.co.uk/2026/04/28/ppn-006-explained-carbon-plans-for-uk-contractors/',
+      backgroundImage: 'https://images.pexels.com/photos/9951823/pexels-photo-9951823.jpeg'
+    },
+    ...Array.from({ length: 6 }, (_, index) => ({
+      title: `Blog ${String(index + 3).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
@@ -19,12 +26,18 @@ if (blogGrid) {
   blogCards.forEach((blog, index) => {
     const cardTag = blog.url ? 'a' : 'article';
     const card = document.createElement(cardTag);
-    card.className = `blog-card reveal reveal-delay-${(index % 4) + 1}${blog.featured ? ' featured-blog' : ''}`;
+    card.className = `blog-card reveal reveal-delay-${(index % 4) + 1}${blog.featured ? ' featured-blog' : ''}${blog.backgroundImage ? ' image-blog' : ''}`;
     card.setAttribute('data-index', String(index + 1).padStart(2, '0'));
 
     if (blog.url) {
       card.href = blog.url;
       card.setAttribute('aria-label', `${blog.title} (opens blog post)`);
+    }
+
+    if (blog.backgroundImage) {
+      card.style.backgroundImage = `linear-gradient(160deg, rgba(8,11,15,0.88) 5%, rgba(14,19,25,0.66) 45%, rgba(8,11,15,0.9) 100%), url('${blog.backgroundImage}')`;
+      card.style.backgroundSize = 'cover';
+      card.style.backgroundPosition = 'center';
     }
 
     card.innerHTML = `
