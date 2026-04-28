@@ -51,11 +51,13 @@ if (blogGrid) {
       url: 'https://blog.i-cost.co.uk/2026/04/28/uk-epr-packaging-2026-what-manufacturers-must-do-now/',
       backgroundImage: 'https://images.pexels.com/photos/6774951/pexels-photo-6774951.jpeg'
     },
-    ...Array.from({ length: 1 }, (_, index) => ({
-      title: `Blog ${String(index + 8).padStart(2, '0')}`,
-      status: 'Coming soon',
-      summary: 'Publishing updates.'
-    }))
+    {
+      title: 'SBTi for SMEs: How to Set a Net-Zero Target That Holds',
+      status: 'Published September 2025',
+      summary: 'Learn how SMEs can set a credible net-zero target aligned with SBTi guidance and built to last.',
+      url: 'https://blog.i-cost.co.uk/2026/04/28/sbti-for-smes-how-to-set-a-net-zero-target-that-holds/',
+      backgroundImage: 'https://images.pexels.com/photos/7722923/pexels-photo-7722923.jpeg'
+    }
   ];
 
   blogCards.forEach((blog, index) => {
