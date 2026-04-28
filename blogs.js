@@ -16,8 +16,15 @@ if (blogGrid) {
       url: 'http://blog.i-cost.co.uk/2026/04/28/ppn-006-explained-carbon-plans-for-uk-contractors/',
       backgroundImage: 'https://images.pexels.com/photos/9951823/pexels-photo-9951823.jpeg'
     },
-    ...Array.from({ length: 6 }, (_, index) => ({
-      title: `Blog ${String(index + 3).padStart(2, '0')}`,
+    {
+      title: 'Intelligent Cost & Compliance: Why UK SMEs Need a New Operating Model',
+      status: 'Published February 2026',
+      summary: 'Discover why UK SMEs need a smarter operating model to stay cost-efficient and compliance-ready.',
+      url: 'https://148360023.hs-sites-eu1.com/blog/i-cost.co.uk/intelligent-cost-compliance-why-uk-smes-need-a-new-operating-model',
+      backgroundImage: 'https://images.pexels.com/photos/3943748/pexels-photo-3943748.jpeg'
+    },
+    ...Array.from({ length: 5 }, (_, index) => ({
+      title: `Blog ${String(index + 4).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
