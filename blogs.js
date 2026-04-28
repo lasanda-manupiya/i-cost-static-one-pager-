@@ -44,8 +44,15 @@ if (blogGrid) {
       url: 'https://blog.i-cost.co.uk/2026/04/28/compliance-roadmap-for-uk-project-based-smes-2026/',
       backgroundImage: 'https://images.pexels.com/photos/6675078/pexels-photo-6675078.jpeg'
     },
-    ...Array.from({ length: 2 }, (_, index) => ({
-      title: `Blog ${String(index + 7).padStart(2, '0')}`,
+    {
+      title: 'UK EPR Packaging 2026: What Manufacturers Must Do Now',
+      status: 'Published October 2025',
+      summary: 'Learn what UK manufacturers must do now to prepare for EPR packaging requirements in 2026.',
+      url: 'https://blog.i-cost.co.uk/2026/04/28/uk-epr-packaging-2026-what-manufacturers-must-do-now/',
+      backgroundImage: 'https://images.pexels.com/photos/6774951/pexels-photo-6774951.jpeg'
+    },
+    ...Array.from({ length: 1 }, (_, index) => ({
+      title: `Blog ${String(index + 8).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
