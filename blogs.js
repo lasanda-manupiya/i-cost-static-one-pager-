@@ -23,8 +23,15 @@ if (blogGrid) {
       url: 'https://148360023.hs-sites-eu1.com/blog/i-cost.co.uk/intelligent-cost-compliance-why-uk-smes-need-a-new-operating-model',
       backgroundImage: 'https://images.pexels.com/photos/3943748/pexels-photo-3943748.jpeg'
     },
-    ...Array.from({ length: 5 }, (_, index) => ({
-      title: `Blog ${String(index + 4).padStart(2, '0')}`,
+    {
+      title: 'Five Hidden Margin Leaks on UK Construction Projects',
+      status: 'Published January 2026',
+      summary: 'Explore five hidden margin leaks that can quietly erode profitability on UK construction projects.',
+      url: 'http://blog.i-cost.co.uk/2026/04/28/five-hidden-margin-leaks-on-uk-construction-projects/',
+      backgroundImage: 'https://images.pexels.com/photos/9755376/pexels-photo-9755376.jpeg'
+    },
+    ...Array.from({ length: 4 }, (_, index) => ({
+      title: `Blog ${String(index + 5).padStart(2, '0')}`,
       status: 'Coming soon',
       summary: 'Publishing updates.'
     }))
